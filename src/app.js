@@ -1,30 +1,30 @@
-var app = angular.module("app", []);
-
-app.controller("firstController", function($scope) {
-    $scope.firstName = "John";
-    $scope.lastName = "Doe";
-});
+angular.module("app", []);
 
 angular.module("app")
-    .controller("secondController", function () {
+    .controller("appController", function () {
         var self = this;
 
+        // THIS IS ARE MODELS INITED OUTSIDE INIT
         self.firstName = "John";
         self.lastName = "Doe";
-    })
-    .controller("thirdController", function () {
-        var self = this;
 
-        self.print = "This is working too";
+        self.calculateNumber = calculateNumber;
+
+        /**
+         * SCOPE: SELF IS FROM OUTSIDE FUNCTION
+         */
+        function init() {
+            self.randomNumber = 0;
+            // WHAT IF this.randomNumber
+        }
+
+        /**
+         *
+         */
+        function calculateNumber() {
+            self.randomNumber = Math.floor((Math.random() * 10) + 1);
+        }
+        
+        // INIT EXECUTION
+        init();
     });
-
-
-//// BEST OPTION
-//app.controller("secondController", ['$scope', function($scope) {
-//    $scope.firstName = "John";
-//    $scope.lastName = "Doe";
-//}]);
-
-
-
-// BETTER OPTION IN secondController.js

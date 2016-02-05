@@ -3,30 +3,19 @@
 <body>
 <h1>Welcome to Angular</h1>
 <div ng-app="app">
-    <div ng-controller="firstController">
-        <h2>Inside controller</h2>
-        <p>My first name: {{firstName}}</p>
-        <p>My last name: {{lastname}}</p> <!-- JAVASCRIPT CASE SENSITIVE -->
-        <p>My last name: {{lastName}}</p>
-    </div>
+    <div ng-controller="appController as appCtrl">
+        <h2>Models string</h2>
+        <p>Model1 value: {{appCtrl.firstName}}</p>
+        <p>Model2 value: {{appCtrl.lastName}}</p>
 
 
-    <div>
-        <h2>Outside controller</h2>
-        <p>My first name: {{firstName}}</p>
-        <p>My last name: {{lastname}}</p>
-    </div>
+        <input type="text" name="firstName" ng-model="appCtrl.firstName" />
+        <input type="text" name="firstName" ng-model="appCtrl.lastName" />
 
-    <div ng-controller="secondController as secondCtrl">
-        <h2>Best opion</h2>
-        <p>First name: {{secondCtrl.firstName}}</p>
-        <p>First name: {{secondCtrl.lastName}}</p>
-    </div>
+        <h2>Models numbers</h2>
+        <p>Your random number is: <span ng-bind="appCtrl.randomNumber"></span></p>
 
-
-    <div ng-controller="thirdController as thirdCtrl">
-        <h2>Concatenated controller</h2>
-        {{thirdCtrl.print}}
+        <button ng-click="appCtrl.calculateNumber()">Calculate</button>
     </div>
 </div>
 
@@ -38,7 +27,7 @@
 
 <!-- ANGULAR DEPENDENCIES -->
 <script src="src/app.js"></script>
-<script src="src/secondController.js"></script>
+<script src="src/bestController.js"></script>
 
 </body>
 </html>
