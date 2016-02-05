@@ -2,11 +2,32 @@
 <head></head>
 <body>
 <h1>Welcome to Angular</h1>
-<div ng-app="">
-    <p>My first expression: {{ 5 + 5 }}</p>
-    <p>My second expression: {{"a"+"b"}}</p>
-    <p>My third expression: {{"a" === a}}</p>
-    <p>My third expression: {{"a" === "a"}}</p>
+<div ng-app="app">
+    <div ng-controller="firstController">
+        <h2>Inside controller</h2>
+        <p>My first name: {{firstName}}</p>
+        <p>My last name: {{lastname}}</p> <!-- JAVASCRIPT CASE SENSITIVE -->
+        <p>My last name: {{lastName}}</p>
+    </div>
+
+
+    <div>
+        <h2>Outside controller</h2>
+        <p>My first name: {{firstName}}</p>
+        <p>My last name: {{lastname}}</p>
+    </div>
+
+    <div ng-controller="secondController as secondCtrl">
+        <h2>Best opion</h2>
+        <p>First name: {{secondCtrl.firstName}}</p>
+        <p>First name: {{secondCtrl.lastName}}</p>
+    </div>
+
+
+    <div ng-controller="thirdController as thirdCtrl">
+        <h2>Concatenated controller</h2>
+        {{thirdCtrl.print}}
+    </div>
 </div>
 
 
@@ -14,6 +35,9 @@
 <!-- ANGULAR CORE -->
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
 
+
+<!-- ANGULAR DEPENDENCIES -->
+<script src="src/app.js"></script>
 
 </body>
 </html>
