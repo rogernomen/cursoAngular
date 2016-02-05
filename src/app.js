@@ -24,11 +24,7 @@ angular.module("app")
 //    $scope.firstName = "John";
 //    $scope.lastName = "Doe";
 //}]);
-//
-//
-//// BETTER OPTION
-//app.controller("secondController", ['$scope', secondController($scope)]);
-//
-//function secondController($scope) {
-//
-//}
+
+
+
+// BETTER OPTION IN secondController.js
